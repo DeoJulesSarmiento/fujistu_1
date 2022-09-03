@@ -1,0 +1,94 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+
+.form-container
+{
+    background:linear-gradient(135deg,#1f9aec,#8d1bb9) no-repeat;
+    display: flex;
+    padding:20px 40px;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-form
+{
+
+    background:white;
+    height: 500px;
+    border-radius: 5px;
+ 
+}
+
+.right-table
+{   
+    margin-left:40px;
+    width:70%;
+    border:1px solid lightgray;
+    padding:20px 40px;
+    background:white;
+    border-radius: 5px;
+    height:500px;
+   
+}
+
+form
+{
+    padding:10px 45px;
+}
+
+#btn-primary
+{
+width:100px;
+
+
+}
+
+#btn-danger
+{
+    float:right;
+    width:100px;
+
+}
+
+
+ .form-title
+{
+font-weight: bold;
+margin-left:45px;
+}
+
+
+
+.dataTables_filter {margin-bottom: 30px;
+}
+
+
+ th:nth-child(odd),th:nth-child(even)  {
+    border-left: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+  }
+
+
+  @media screen and (max-width: 600px) {
+   .form-title, .form-control, .form-control, input[type=submit],button[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    button[type=submit] {
+
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+
