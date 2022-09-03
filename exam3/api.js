@@ -17,6 +17,12 @@ fetch("https://5fdb12ee91f19e00173339f5.mockapi.io/employee").then((data)=>{
     innerHTML=tableData;
 })  
 
-
+$(document).ready(function() {
+    $('#example').dataTable({
+     
+        "lengthChange": false,
+        "ordering": false
+    });
+    });
 
 
