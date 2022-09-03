@@ -11,11 +11,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
-
-
   </head>
   <body >
-
 
 <div class="form-container">
             <div class="side-form">
@@ -25,22 +22,22 @@
                     <form>
                         <div class="form-group mb-3" >
                             <label>Fullname:</label>
-                            <input type="text" class="form-control" id="fullname" name="fullname">
+                            <input type="text" class="empname form-control" id="fullname" name="fullname">
                         </div>
                         <div class="form-group mb-3" >
                             <label>Position:</label>
-                            <input type="text" class="form-control" id="position" name="position">
+                            <input type="text" class="designation form-control" id="position" name="position">
                         </div>
                         <div class="form-group mb-3" >
                             <label>Section:</label>
-                            <input type="text" class="form-control" id="section" name="section">
+                            <input type="text" class="mobile form-control" id="section" name="section">
                         </div>
                         <div class="form-group mb-3" >
                             <label>Status:</label>
-                            <input type="text" class="form-control" id="status" name="status">
+                            <input type="text" class="empsalary form-control" id="status" name="status">
                         </div>
                 
-                        <button type="submit" id="btn-primary" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> Submit</button>
+                    <button type="submit"  value="Submit"  class="button btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
                         <button type="submit" id="btn-danger"class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear  </button>
                     </form>
             </div> 
@@ -49,7 +46,7 @@
             <div class="right-table">
                 
                 <label style="font-weight:bold;font-size:25px;  "> Employee's Data </label>
-                    <table id="example" class="display nowrap cell-border" width="100%">
+                    <table id="example" class="table display nowrap cell-border" width="100%">
                     <thead>
                       <tr>
                         <th width="5%" scope="col">No.</th>
@@ -57,6 +54,7 @@
                         <th scope="col">Position</th>
                         <th scope="col">Department</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Action</th>
                      
                       </tr>
                     </thead>
@@ -70,35 +68,7 @@
     </div>    
 </div>
 </html>
-<!--end of Datatables -->
+
 
 <script src="api.js"></script>  
 
-<script>
-
-  const url = "https://5fdb12ee91f19e00173339f5.mockapi.io/employee";
-  const formEl = document.querySelector("form");
-  formEl.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(formEl);
-    const formDataSerialized = Object.fromEntries(formData);
-    const jsonObject = {
-      ...formDataSerialized,
-    };
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(jsonObject),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const json = await response.json();
-      console.log(json);
-      window.location = window.location.href;
-    } catch (e) {
-      console.error(e);
-      alert("there as an error");
-    }
-  });
-</script>
